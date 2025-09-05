@@ -1,8 +1,8 @@
 {
   "name": "simple-http-assignment-start",
   "version": "1.0.0",
-  "description": "Package for simple-http-assignment-start",
-  "main": "index.js",
+  "description": "a basic http server",
+  "main": "./src/server.js",
   "scripts": {
     "start": "node ./src/server.js",
     "pretest": "eslint ./src --fix",

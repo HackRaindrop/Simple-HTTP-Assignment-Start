@@ -2,6 +2,7 @@ const http = require('http');
 const htmlHandler = require('./htmlResponses.js');
 const textHandler = require('./textResponses.js');
 const jsonHandler = require('./jsonResponses.js');
+const imageHandler = require('./imageResponses.js');
 
 const port = process.env.PORT || process.env.NODE_PORT || 3000;
 
@@ -12,21 +13,31 @@ const onRequest = (request, response) => {
         case '/':
             htmlHandler.getIndex(request, response);
             break;
+
         case '/page2':
             htmlHandler.getPage2(request, response);
             break;
+
         case '/hello':
-            htmlHandler.getHello(request, response);
+            textHandler.getHello(request, response);
             break;
+
         case '/time':
-            htmlHandler.getTime(request, response);
+            textHandler.getTime(request, response);
             break;
+
         case '/helloJSON':
-            htmlHandler.getHelloJSON(request, response);
+            jsonHandler.getHelloJSON(request, response);
             break;
+
         case '/timeJSON':
-            htmlHandler.getTimeJSON(request, response);
+            jsonHandler.getTimeJSON(request, response);
             break;
+
+        case '/dankmemes':
+            imageHandler.getSponge(request, response);
+            break;
+
         default:
             htmlHandler.getIndex(request, response);
             break;
